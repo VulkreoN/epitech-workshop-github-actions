@@ -2,9 +2,20 @@ name : rompiche quel os c'est ??? Mystere !!
 on :
   workflow_dispatch:
 
-jobs :
-  build :
-    runs-on : [ ubuntu-latest, windows-latest, macos-latest ]
+jobs:
+  buildUbuntu:
+    runs-on: ubuntu-latest
     steps:
-      - name: Afficher le nom de l'OS
-        run: echo "${{ runner.os }}"
+      - name: Afficher la version de l'OS (ubuntu)
+        run: cat /etc/os-release
+  buildWindows:
+    runs-on: windows-latest
+    steps:
+      - name: Afficher la version de l'OS (Windows)
+        run: Get-ComputerInfo -Property "*version"
+  buildMac:
+    runs-on: macos-latest
+    steps:
+      - name: Afficher la version de l'OS (Mac)
+        run: sw_vers
+
