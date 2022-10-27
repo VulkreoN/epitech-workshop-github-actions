@@ -20,5 +20,5 @@ jobs :
     steps :
       - uses: actions/checkout@v3
 
-      - name: pute
-        run: echo "Hello World! The time is $(date)."
+      - name: c'est l'heure de t'acheter une montre !
+        run: echo "Hello, world! Today is $(date +'%m-%d-%Y %H:%M:%S')"
