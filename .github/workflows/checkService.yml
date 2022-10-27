@@ -12,5 +12,5 @@ jobs:
         ports:
           - 4242:80
     steps:
-      - name: curl nginx page
-        run: curl http://localhost:4242 | grep "HTTP/"
+      - name: curl nginx page and print response code
+        run: curl -w "%{http_code}" http://localhost:4242
