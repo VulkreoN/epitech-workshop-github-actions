@@ -14,3 +14,16 @@ jobs:
     steps:
       - name: curl nginx page and print response code
         run: curl -s -o /dev/null -w "%{http_code}" http://localhost:4242
+  checkNginxSecretChuuut:
+    runs-on: ubuntu-latest
+    services:
+      nginx:
+        image: mrsquaare/nginx-htpasswd
+        ports:
+          - 4242:80
+        env:
+          NGINX_USER: ${{ secrets.NGINX_USER }}
+          NGINX_PASS: ${{ secrets.NGINX_PASS }}
+    steps:
+      - name: curl nginx page and print response code
+        run: curl -s -o /dev/null -w "%{http_code}" http://localhost:4242 -u ${{ secrets.NGINX_USER }}:${{ secrets.NGINX_PASS }}
