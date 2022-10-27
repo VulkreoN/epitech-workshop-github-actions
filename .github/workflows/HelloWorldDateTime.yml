@@ -1,0 +1,18 @@
+name : HelloWorld!
+
+on :
+  issues :
+    types : [ opened, edited, closed ]
+  pull_request :
+    types : [ opened, edited ]
+  gollum :
+    types : [ created, edited, deleted ]
+  schedule :
+    - cron :  ' 0 0 1 * * '
+
+jobs :
+  runs-on :  ubuntu-latest
+  steps :
+    - name :  HelloWorld!
+      run :  echo  " Hello, world! The time is $(date)."
+      shell :  bash
