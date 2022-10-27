@@ -11,7 +11,8 @@ on :
     - cron :  ' 0 0 1 * * '
 
 jobs :
-  runs-on :  ubuntu-latest
+  build :
+    runs-on :  ubuntu-latest
   steps :
     - name :  HelloWorld!
       run :  echo  " Hello, world! The time is $(date)."
