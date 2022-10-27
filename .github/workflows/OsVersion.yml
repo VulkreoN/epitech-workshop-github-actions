@@ -36,3 +36,4 @@ jobs:
     steps:
       - name: Afficher la version de l'OS (container fedora)
         run: cat /etc/os-release
+  
