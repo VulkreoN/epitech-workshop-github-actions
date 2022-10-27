@@ -12,5 +12,5 @@ jobs:
         ports:
           - 4242:80
     steps:
-      - name: Afficher la version de nginx
-        run: curl http://localhost:4242
+      - name: curl nginx page
+        run: curl http://localhost:4242 | grep "HTTP/"
