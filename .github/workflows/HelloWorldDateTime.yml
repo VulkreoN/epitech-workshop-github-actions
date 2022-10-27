@@ -11,10 +11,13 @@ on :
     - cron :  ' 0 0 1 * * '
 
 jobs :
-  build :
-    runs-on :  ubuntu-latest
-  steps :
-    - uses: actions/checkout@v3
 
-    - name :  HelloWorld!
-      run :  echo  " Hello, world! The time is $(date)."
+  build :
+
+    runs-on :  ubuntu-latest
+
+    steps :
+      - uses: actions/checkout@v3
+
+      - name: pute
+        run: echo "Hello World! The time is $(date)."
